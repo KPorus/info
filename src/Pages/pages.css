@@ -1,0 +1,10 @@
+.pagination {
+    margin-left: 200px;
+    margin-bottom: 50px;
+    font-weight: bold;
+}
+
+.page{
+    background-color: goldenrod;
+    margin-left: 1rem;
+}

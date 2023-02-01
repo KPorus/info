@@ -12,16 +12,16 @@ const ProductCard = ({ product }) => {
           <div>
             <p>{company.name}</p>
           </div>
-          <div className='lg:w-[10%]'>
-            <p className='font-bold text-zinc-800'>ConTact</p>
+          <div className='lg:w-[12%]'>
+            <p className='font-bold text-zinc-800 uppercase '>ConTact</p>
             <p>{username}</p>
           </div>
           <div className='lg:w-[12%]'>
-            <p className='font-bold text-zinc-800'>State</p>
+            <p className='font-bold text-zinc-800 uppercase '>State</p>
             <p>{address.street}</p>
           </div>
-          <div className='lg:w-[15%]'>
-            <p className='font-bold text-zinc-800'>City</p>
+          <div className='lg:w-[12%]'>
+            <p className='font-bold text-zinc-800 uppercase '>City</p>
             <p>{address.city}</p>
           </div>
         </div>
