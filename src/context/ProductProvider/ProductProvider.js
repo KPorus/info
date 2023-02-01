@@ -2,15 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useReducer } from 'react';
 import { createContext } from 'react';
 import actionTypes from '../../State/actionTypes';
-import { initialState, productsReducer } from '../../State/State';
+import { initialState, infosReducer } from '../../State/State';
 
 
-let Products = createContext();
+let infos = createContext();
 const ProductProvider = ({ children }) => {
   const [count, setCount] = useState(10);
   const [page, setPage] = useState(0);
   const [size, setSize] = useState(3);
-    const [state, dispatch] = useReducer(productsReducer, initialState);
+    const [state, dispatch] = useReducer(infosReducer, initialState);
     useEffect(() => {
       dispatch({ type: actionTypes.FETCHING_START });
       fetch("https://jsonplaceholder.typicode.com/users")
@@ -29,11 +29,11 @@ const ProductProvider = ({ children }) => {
         dispatch,
         count,setCount,setPage,setSize,size,page
     }
-  return <Products.Provider value={value}>{children}</Products.Provider>;
+  return <infos.Provider value={value}>{children}</infos.Provider>;
 };
 
-export const useProducts = () => {
-  const context = useContext(Products);
+export const useinfos = () => {
+  const context = useContext(infos);
   return context;
 };
 

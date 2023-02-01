@@ -7,7 +7,7 @@ const ProductCard = ({ product }) => {
   console.log(address.geo.lat);
   return (
     <div>
-      <div className=' flex flex-col md:flex-row items-center md:justify-between m-4  p-6 overflow-hidden text-gray-600 shadow-lg'>
+      <div className=' flex flex-col md:flex-row items-center md:justify-between m-4  p-6 overflow-hidden text-gray-900 shadow-lg'>
         <div className='flex flex-col lg:flex-row lg:space-y-0 space-y-5 md:space-x-16 items-center justify-evenly text-center w-[90%]'>
           <div>
             <p>{company.name}</p>
@@ -28,12 +28,12 @@ const ProductCard = ({ product }) => {
         <button
           type='button'
           onClick={() => setstate(!state)}
-          className='px-8 py-3 font-semibold border rounded border-gray-600 lg:w-[18%]'>
+          className='px-8 py-3 font-semibold border rounded border-gray-700 lg:w-[18%]'>
           {state ? "Hide Details" : "Show Details"}
         </button>
       </div>
       {state && (
-        <div className='grid text-gray-100 container justify-center bg-slate-900 p-4'>
+        <div className='grid text-white container justify-center bg-black p-4'>
           <div>
             <div className='flex-grow p-2'>
               <p className='font-bold'>Description</p>
