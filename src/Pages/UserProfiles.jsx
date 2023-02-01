@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useinfos } from '../context/ProductProvider/ProductProvider';
+import { useProducts } from '../context/ProductProvider/ProductProvider';
 import Loading from './Loading';
 import ProductCard from './ProductCard';
 
@@ -8,10 +8,10 @@ import Pagination from './Pagination';
 
 const UserProfiles = () => {
       const [currentPage, setCurrentPage] = useState(1);
-      const [infosPerPage] = useState(3);
+      const [postsPerPage] = useState(3);
     const {
-      state: { infos, loading, error },
-    } = useinfos();
+      state: { products, loading, error },
+    } = useProducts();
 
     let content;
 
@@ -23,15 +23,15 @@ const UserProfiles = () => {
       content = <p>Something went wrong</p>;
     }
 
-    if (!loading && !error && infos.length === 0) {
+    if (!loading && !error && products.length === 0) {
       content = <p>Nothing to show, product list is empty</p>;
     }
     
-    const indexOfLastInfo = currentPage * infosPerPage;
-  const indexOfFirstInfo = indexOfLastInfo - infosPerPage;
-  const currentPosts = infos.slice(indexOfFirstInfo, indexOfLastInfo);
+    const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = products.slice(indexOfFirstPost, indexOfLastPost);
 
-    if (!loading && !error && infos.length) {
+    if (!loading && !error && products.length) {
       content = currentPosts
         .map((product) => (
           <ProductCard key={product.id} product={product}></ProductCard>
@@ -45,8 +45,8 @@ const UserProfiles = () => {
       <div className='container mx-auto'>
         <div className='container mx-auto'>{content}</div>
         <Pagination
-          infosPerPage={infosPerPage}
-          totalInfos={infos.length}
+          postsPerPage={postsPerPage}
+          totalPosts={products.length}
           paginate={paginate}
         />
       </div>

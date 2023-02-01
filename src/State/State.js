@@ -2,11 +2,11 @@ import { actionTypes } from "./actionTypes";
 
 export const initialState = {
   loading: false,
-  infos: [],
+  products: [],
   error: false,
 };
 
-export const infosReducer = (state, action) => {
+export const productsReducer = (state, action) => {
   switch (action.type) {
     case actionTypes.FETCHING_START:
       return {
@@ -18,7 +18,7 @@ export const infosReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        infos: action.payload,
+        products: action.payload,
         error: false,
       };
     case actionTypes.FETCHING_ERROR:
