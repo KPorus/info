@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   return (
     <div>
       <div className=' flex flex-col md:flex-row items-center md:justify-between m-4  p-6 overflow-hidden text-gray-900 shadow-lg'>
-        <div className='flex flex-col lg:flex-row lg:space-y-0 space-y-5 md:space-x-16 items-center justify-evenly text-center w-[90%]'>
+        <div className='flex flex-col lg:flex-row lg:space-y-0 space-y-5 md:space-x-16 items-center justify-center text-center w-[90%]'>
           <div>
             <p>{company.name}</p>
           </div>
@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
         </button>
       </div>
       {state && (
-        <div className='grid text-white container justify-center bg-black p-4'>
+        <div className='grid text-white container justify-center bg-black p-4 mb-2'>
           <div>
             <div className='flex-grow p-2'>
               <p className='font-bold'>Description</p>
