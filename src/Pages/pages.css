@@ -4,6 +4,10 @@
 }
 
 .page{
+    color: black;
+    margin-left: 1rem;
+}
+.page:active{
     background-color: rgb(2, 2, 2);
     color: white;
     margin-left: 1rem;
