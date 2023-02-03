@@ -10,5 +10,9 @@
 .page:active{
     background-color: rgb(2, 2, 2);
     color: white;
-    margin-left: 1rem;
+    transition: all linear 50ms;
+    -webkit-transition: all linear 50ms;
+    -moz-transition: all linear 50ms;
+    -ms-transition: all linear 50ms;
+    -o-transition: all linear 50ms;
 }
